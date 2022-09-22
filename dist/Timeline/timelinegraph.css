@@ -1,0 +1,131 @@
+.timechart {
+    /* width: 80%; */
+    max-width: 900px;
+    /* height: 80vh; */
+    margin: 0 auto;
+    position: relative;
+}
+
+.timechart .timeline_main .timeline_header {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+
+.timechart .timeline_main .timeline_sub_chartbox {
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+}
+
+.timechart .timeline_main .timeline_chartbox {
+    box-shadow: 1px 3px 8px 0px #d8d3d3;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 50px;
+}
+
+.timechart .timeline_main .timeline_start_chartbox {
+    padding: 10px;
+    margin-bottom: 50px;
+}
+.timechart .timeline_main {
+    /* padding-bottom: 50px; */
+    width: 90%;
+    /* position: relative; */
+}
+
+.timechart .timeline_main::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    /* background-color: #d4d4d4; */
+    height: 100%;
+}
+.timechart .timeline_main .timeline_chartbox_left{
+    padding-right: 4px;
+}
+/* Responsive ----------------------------- */
+@media only screen and (min-width: 768px) {
+
+    .timechart .timeline_main {
+        /* padding-bottom: 50px; */
+        width: 50%;
+        position: relative;
+    }
+
+    .timechart .timeline_main .timeline_chartbox .timeline_date {
+        position: absolute;
+        top: -25px;
+        color: grey;
+        font-size: 14px;
+    }
+
+    .timechart .timeline_main:nth-child(even) {
+        float: right;
+        clear: left;
+        transform: translateX(20px);
+    }
+
+    .timechart .timeline_main:nth-child(odd) {
+        float: left;
+        clear: right;
+        transform: translateX(-20px);
+    }
+
+    .timechart .timeline_main::before {
+        content: '';
+        position: absolute;
+        width: 3px;
+        background-color: #d4d4d4   ;
+        height: 100%;
+    }
+
+    .timechart .timeline_main:nth-child(odd)::before {
+        left: calc(100% + 20px);
+    }
+
+    .timechart .timeline_main:nth-child(even)::before {
+        left: -20px;
+    }
+
+
+    .timechart .timeline_main::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 3px solid black;
+        background-color: white;
+        padding: 2px;
+        /* bottom: 50%; */
+        top: 0
+    }
+
+    .timechart .timeline_main_start::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        /* border-radius: 50%; */
+        border: 3px solid rgb(142, 233, 142) !important;
+        background-color: #058068;
+        padding: 2px;
+        /* bottom: 50%; */
+        top: 0
+    }
+
+    .timechart .timeline_main:nth-child(odd)::after {
+        transform: translate(62%, -50%);
+        right: -19px;
+    }
+
+    .timechart .timeline_main:nth-child(even)::after {
+        transform: translate(-50%, -50%);
+        left: -19px;
+    }
+
+}
+
